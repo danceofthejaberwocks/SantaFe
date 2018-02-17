@@ -1,0 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SantaFe
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            {
+                Console.WriteLine("Welcome to Santa Fe, home of the world's spiciest salsa!\n " +
+                  "Are you here for: \n A) Brekfast\n B) Lunch\n C) Dinner");
+                string mealChoice = Console.ReadLine().ToUpper();
+                
+                Console.WriteLine($"What would you like?");
+                Console.ReadLine();
+                if (mealChoice == "A")
+                { breakfastMenuPrint(); }
+                else if (mealChoice == "B") { lunchMenuPrint(); }
+                else { dinnerMenuPrint(); }
+            }
+            drinkMenu();
+            string drinkChoice = Console.ReadLine().ToUpper();
+
+            {
+                if (drinkChoice == "A")
+                {
+                    var age = ageCheck();
+                    Console.WriteLine($"You are {age}");
+                }
+                else if (drinkChoice == "C") { ageCheck(); }
+                else if (drinkChoice == "E") { ageCheck(); }
+                else { Console.WriteLine("Will that be all today?");
+                    }
+               
+                Console.ReadLine();}
+            string answer = Console.ReadLine().ToUpper();
+          
+        }
+
+
+
+        public static void breakfastMenuPrint()
+        {
+            string[] breakfast = new string[3];
+            breakfast[0] = "A. Biscuits and Gravy: $5.20";
+            breakfast[1] = "B. French Toast: $3.25";
+            breakfast[2] = "C. Breakfast Burrito: $6.15";
+            for (int i = 0; i <3; i++)
+            {
+                Console.WriteLine(breakfast[i]);
+               
+            }
+            Console.ReadLine();
+        }
+        public static void lunchMenuPrint()
+        {   string[] lunch = new string[3];
+            lunch[0] = "A. Nachos: $4.15";
+           lunch[1] = "B. Chicken Street Tacos: $3.25";
+            lunch[2] = "C. Tamales: $6.15";
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(lunch[i]);
+
+            }
+            Console.ReadLine();
+        }
+        public static void dinnerMenuPrint()
+        {
+            string[] dinner = new string[3];
+            dinner[0] = "A. Arroz con Pollo: $10.50";
+            dinner[1] = "B. Mama's Mole: $3.50";
+            dinner[2] = "C. Shrimp Diablo: $20.75";
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(dinner[i]);
+
+            }
+            Console.ReadLine();
+        }
+
+        public static void drinkMenu()
+        {
+            string[] drinks = new string[5];
+            drinks[0] = "A) Bloody Mary";
+            drinks[1] = "B) Iced Tea";
+            drinks[2] = "C) Beer";
+            drinks[3] = "D) Soda";
+            drinks[4] = "E) Water";
+
+            Console.WriteLine($"And what do you want to drink?\n");
+            for (int i = 0; i < 5; i++)
+            { Console.WriteLine( drinks[i]); }
+            Console.ReadLine();
+        }
+
+            public static TimeSpan ageCheck()
+            {
+            string input = Console.ReadLine();
+            var birthday = DateTime.Parse(input);
+            var startDate = DateTime.Today;
+            TimeSpan Age = startDate.Subtract(birthday);
+            return Age;
+            }
+        }
+    }
+
+//breakfast menu I want biscuits and gravy, french toast and breakfast burrito 
+// lunch menu I want nachos, chicken or beef tacos, and tamales 
+//dinner arroz con pollo, mole, spicy shrimp 
