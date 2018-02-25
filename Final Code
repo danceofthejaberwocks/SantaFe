@@ -24,25 +24,25 @@ namespace SantaFe
         public static bool WelcomeMenu()
             //this method is just a simple loop so you can keep ordering 
         {
-            bool welcomeMenu = true;
+            bool doneOrdering = true;
            
-            while (welcomeMenu == true)
+            while (doneOrdering == true)
             {
                
                 Console.WriteLine("Will that be all today?\nY or N");
                 string answer = Console.ReadLine().ToUpper();
                 if (answer == "N")
                 {
-                    welcomeMenu = true;
+                   doneOrdering = true;
                     choiceScript();
                 }
                 else
                 {
-                    welcomeMenu = false;
+                    doneOrdering = false;
                 }
             }
 
-            return welcomeMenu;
+            return doneOrdering;
         }
         public static void choiceScript()
             //this method has you pick the meal and calls on the method to card you
